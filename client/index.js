@@ -1,7 +1,9 @@
+require('util')
+
 function runDemo () {
   var director = cc.Director.sharedDirector
   director.attachInView(document.getElementById('cocos2d'))
-  director.displayFPS = true
+  //director.displayFPS = true
 
   var size = director.winSize
 
@@ -11,12 +13,10 @@ function runDemo () {
 
   var sprite = new cc.Sprite({
     url: 'images/oryx_lofi/lofi_char.png',
-    rect: new cc.Rect(0, 0, 8, 8)
+    rect: new cc.Rect(64, 0, 32, 32)
   });
   sprite.position = new cc.Point(0, 0)
   sprite.anchorPoint = new cc.Point(0, 0)
-  sprite.scaleX = 1.0;
-  sprite.scaleY = 1.0
   layer.addChild(sprite)
 
   director.runWithScene(scene)

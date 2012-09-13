@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "express": "3.0.0rc4",
-    "jade": "*"
+    "jade": "*",
+    "socket.io": "0.9.10",
+    "browserify": "1.15.5"
   }
 }
