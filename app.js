@@ -1,3 +1,4 @@
+require('coffee-script')
 
 /**
  * Module dependencies.
@@ -8,11 +9,13 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
-  , browserify = require('browserify');
+  , browserify = require('browserify')
+  , server
+  , io;
 
 var app = express();
 
-var bundle = browserify(__dirname + '/client/index.js');
+var bundle = browserify(__dirname + '/client/client.coffee');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -34,6 +37,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+  io = require('socket.io').listen(server);
 });
