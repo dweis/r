@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+#cocos2d {
+  width: 640px;
+  height: 480px;
+}
