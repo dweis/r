@@ -15,7 +15,7 @@ var express = require('express')
 
 var app = express();
 
-var bundle = browserify(__dirname + '/client/client.coffee');
+var bundle = browserify(__dirname + '/client/index.coffee');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
