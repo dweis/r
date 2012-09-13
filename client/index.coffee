@@ -17,8 +17,13 @@ $ () ->
 
   director.runWithScene(scene)
 
+  map = new cc.TMXTiledMap
+    url: 'assets/oryx_lofi/town.tmx'
+
+  layer.addChild map
+
   sprite = new cc.Sprite 
-    url: 'images/oryx_lofi/lofi_char.png'
+    url: 'assets/oryx_lofi/lofi_char.png'
     rect: new cc.Rect(64, 0, 32, 32)
 
   sprite.position = new cc.Point(0, 0)
